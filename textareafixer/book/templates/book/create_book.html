@@ -1,16 +1,18 @@
-<!-- create_book.html -->
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Create Book</title>
+    <link rel="stylesheet" href="{% static 'book/css/styles.css' %}">
 </head>
 <body>
     <h1>Create a New Book</h1>
-    <form method="post">
+    <form id="save_form" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Save</button>
+        <button id="save_button" type="submit">Save</button>
     </form>
 </body>
+    <script src="{% static 'book/js/sample.js' %}"></script>
 </html>

@@ -1,2 +1,4 @@
 django
 django-rest-framework
+psycopg[binary]
+python-dotenv

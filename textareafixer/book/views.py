@@ -5,9 +5,10 @@ from .forms import BookForm
 def BookCreateView(request):
     if request.method == 'POST':
         form = BookForm(request.POST)
+        #l_content = f"['{form.content}']"
         if form.is_valid():
             form.save()
-            return redirect('book_list')  # Kitap ekledikten sonra kitap listesine yönlendir
+            return redirect('create_book')  # Kitap ekledikten sonra kitap listesine yönlendir
     else:
         form = BookForm()
     
@@ -15,4 +16,6 @@ def BookCreateView(request):
 
 def book_list(request):
     books = Book.objects.all()
+    # for book in books:
+    #     print(book.content)
     return render(request, 'book/book_list.html', {'books': books})

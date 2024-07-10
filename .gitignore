@@ -140,3 +140,6 @@ GitHub.sublime-settings
 **/migrations/**
 !**/migrations
 !**/migrations/__init__.py
+
+.my_pgpass
+.pg_service.conf
