@@ -7,10 +7,9 @@ def BookCreateView(request):
         form = BookForm(request.POST)
         if form.is_valid():
             book = form.save(commit=False)
-
             book.content = f"['{book.content}']"
             book.save()
-            return redirect('book_list')  # Kitap ekledikten sonra kitap listesine yönlendir
+            return redirect('book_list') 
     else:
         form = BookForm()
     
@@ -18,6 +17,4 @@ def BookCreateView(request):
 
 def book_list(request):
     books = Book.objects.all()
-    # for book in books:
-    #     print(book.content)
     return render(request, 'book/book_list.html', {'books': books})

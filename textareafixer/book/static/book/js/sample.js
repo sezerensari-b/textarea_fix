@@ -4,9 +4,11 @@ function checkAndReplace(text) {
     const invalidCharacters = [
         '•',
         '·',
-        //'\t',
-        'o'
+        '\t',
+        'Ø',
+        '¨',
     ];
+    text = text.replace(/^\s*[\-\*\+]\s*/gm, '')
 
     invalidCharacters.forEach(char => {
         if (text.includes(char)) {
