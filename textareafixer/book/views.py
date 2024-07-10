@@ -5,10 +5,12 @@ from .forms import BookForm
 def BookCreateView(request):
     if request.method == 'POST':
         form = BookForm(request.POST)
-        #l_content = f"['{form.content}']"
         if form.is_valid():
-            form.save()
-            return redirect('create_book')  # Kitap ekledikten sonra kitap listesine yönlendir
+            book = form.save(commit=False)
+
+            book.content = f"['{book.content}']"
+            book.save()
+            return redirect('book_list')  # Kitap ekledikten sonra kitap listesine yönlendir
     else:
         form = BookForm()
     
