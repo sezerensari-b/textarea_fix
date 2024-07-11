@@ -18,7 +18,7 @@ function checkAndReplace(text) {
     //     }
     // });
     const invalidCharacters = [
-        //'•',
+        '•',
         '·',
         '\t',
         'Ø',

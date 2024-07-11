@@ -15,6 +15,4 @@ def BookCreateView(request):
 
 def book_list(request):
     books = Book.objects.all()
-    for book in books:
-        print(repr(book.content))
     return render(request, "book/book_list.html", {"books": books})
