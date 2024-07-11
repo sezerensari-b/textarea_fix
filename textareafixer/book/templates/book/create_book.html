@@ -10,7 +10,8 @@
     <h1>Create a New Book</h1>
     <form id="save_form" method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        <label for="id_content">Content:</label><br>
+        <textarea id="id_content" name="content" rows="4" cols="50"></textarea>
         <button id="save_button" type="submit">Save</button>
     </form>
 </body>
